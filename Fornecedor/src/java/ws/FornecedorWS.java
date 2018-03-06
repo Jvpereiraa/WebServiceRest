@@ -16,6 +16,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import modelo.Usuario;
 
@@ -50,11 +51,12 @@ public class FornecedorWS {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    //@Produces("text/plain")
-    @Path("Usuario/get")
-    public String getUsuario(){
+    @Path("Usuario/get/{id}")
+    public String getUsuario(@PathParam("id") Integer id){
        Usuario u = new Usuario();
-       
+       u.setId(id);
+       UsuarioDAO dao = new UsuarioDAO();
+       u = dao.buscar(u);
        //Convertendo para  gson
        Gson g = new Gson();
         

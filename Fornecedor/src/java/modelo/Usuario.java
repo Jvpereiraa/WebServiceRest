@@ -15,7 +15,7 @@ public class Usuario {
     private int id;
     private String nome;
     private String email;
-    private String comentario;
+    private String comment;
     private String cnpj;
 
     public int getId() {
@@ -42,12 +42,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getComentario() {
-        return comentario;
+    public String getComment() {
+        return comment;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
     
     public String getCnpj() {

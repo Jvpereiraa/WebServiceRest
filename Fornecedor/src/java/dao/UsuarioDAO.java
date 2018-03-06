@@ -40,7 +40,7 @@ public class UsuarioDAO {
             pst.setInt(1, usuario.getId());
             pst.setString(2, usuario.getNome());
             pst.setString(3, usuario.getEmail());
-            pst.setString(4, usuario.getComentario());
+            pst.setString(4, usuario.getComment());
             pst.setString(5, usuario.getCnpj());
             
             if(pst.executeUpdate()>0)
@@ -129,7 +129,7 @@ public class UsuarioDAO {
                 item.setId(res.getInt("id"));
                 item.setNome(res.getString("nome"));
                 item.setEmail(res.getString("email"));
-                item.setComentario(res.getString("comentario"));
+                item.setComment(res.getString("comentario"));
                 item.setCnpj(res.getString("cnpj"));
                 
                 retorno.add(item);
@@ -163,7 +163,7 @@ public class UsuarioDAO {
                 retorno.setId(res.getInt("id"));
                 retorno.setNome(res.getString("nome"));
                 retorno.setEmail(res.getString("email"));
-                retorno.setComentario(res.getString("comentario"));
+                retorno.setComment(res.getString("comentario"));
                 retorno.setCnpj(res.getString("cnpj"));
                 
                 
