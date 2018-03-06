@@ -13,11 +13,16 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import static javax.ws.rs.HttpMethod.POST;
+import static javax.ws.rs.HttpMethod.DELETE;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import modelo.Usuario;
 
 /**
@@ -62,6 +67,20 @@ public class FornecedorWS {
         
        return g.toJson(u);
     }
+    
+   @DELETE
+   @Produces(MediaType.TEXT_PLAIN)
+   //@Consumes(MediaType.TEXT_PLAIN)
+   @Path("delete/{id}")
+   public Response deleteUsuario(@PathParam("id") Integer id){
+       Usuario u = new Usuario();
+       u.setId(id);
+       UsuarioDAO dao = new UsuarioDAO();
+       dao.excluir(u);
+       Gson g = new Gson();
+       return Response.status(200).entity("dsad").build();
+   }
+    
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
