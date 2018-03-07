@@ -78,12 +78,12 @@ public class HttpExemplo {
         System.out.println(json);
         */
        
-        /*
-        Deleta usuario
-        String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/delete/3";
+        
+        //Deleta usuario
+        String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/delete/6";
         String retorno = http.sendGet(url,"DELETE");
         System.out.println(retorno);
-        */
+        
       
        
     }
