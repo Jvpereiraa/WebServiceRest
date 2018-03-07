@@ -59,7 +59,7 @@ public class FornecedorWSTest extends TestCase{
         }.getType();
         
         //Inserindo
-        u.setId(5);
+        u.setId(6);
         u.setNome("programatche");
         u.setEmail("aaa.com");
         u.setComment("dsdasd");
@@ -69,7 +69,7 @@ public class FornecedorWSTest extends TestCase{
         http.sendPost(url, json,"POST");
         
         //buscando
-        url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/get/5";
+        url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/get/6";
         json = http.sendGet(url,"GET");
         u = g.fromJson(json, usuarioType);
        // System.out.println(u.getId() + "Oii");
@@ -90,7 +90,7 @@ public class FornecedorWSTest extends TestCase{
         Type usuarioType = new TypeToken<Usuario>() {
         }.getType();
         
-        String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/delete/6";
+        String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/delete/5";
         String retorno = http.sendGet(url,"DELETE");
         System.out.println(retorno);       
         assertEquals("true", retorno);

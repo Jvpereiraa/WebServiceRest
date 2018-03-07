@@ -46,13 +46,7 @@ public class FornecedorWS {
      * Retrieves representation of an instance of ws.FornecedorWS
      * @return an instance of java.lang.String
      */
-    @GET
-    @Produces("text/plain")
-    public String getJson() {
-       return "meu primeiro teste";
-        //TODO return proper representation object
-        //throw new UnsupportedOperationException();
-    }
+  
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -120,12 +114,4 @@ public class FornecedorWS {
        return g.toJson(lista);
     }
 
-    /**
-     * PUT method for updating or creating an instance of FornecedorWS
-     * @param content representation for the resource
-     */
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
-    }
 }
