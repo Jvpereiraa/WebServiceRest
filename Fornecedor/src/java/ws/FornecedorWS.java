@@ -69,17 +69,30 @@ public class FornecedorWS {
     }
     
    @DELETE
-   @Produces(MediaType.TEXT_PLAIN)
+   //@Produces(MediaType.TEXT_PLAIN)
    //@Consumes(MediaType.TEXT_PLAIN)
-   @Path("delete/{id}")
-   public Response deleteUsuario(@PathParam("id") Integer id){
+   @Path("Usuario/delete/{id}")
+   public boolean deleteUsuario(@PathParam("id") Integer id){
        Usuario u = new Usuario();
        u.setId(id);
        UsuarioDAO dao = new UsuarioDAO();
-       dao.excluir(u);
-       Gson g = new Gson();
-       return Response.status(200).entity("dsad").build();
+       u =  dao.buscar(u);
+       return dao.excluir(u);
    }
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("Usuario/inserir")
+    public void inserirUsuario(Usuario content){
+        //Gson g = new Gson();
+        //Usuario u = (Usuario) g.fromJson(content, Usuario.class);
+        UsuarioDAO dao = new UsuarioDAO();
+        dao.inserir(content);
+        
+    
+    
+    }
+    
     
     
     @GET
