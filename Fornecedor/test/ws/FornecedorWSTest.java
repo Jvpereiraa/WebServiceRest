@@ -9,23 +9,14 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
-import java.util.List;
-import javax.net.ssl.HttpsURLConnection;
-import static javax.swing.text.html.FormSubmitEvent.MethodType.GET;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import static javafx.css.StyleOrigin.USER_AGENT;
 import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import modelo.Usuario;
-import static org.junit.Assert.*;
+
 
 
 /**
@@ -38,27 +29,7 @@ public class FornecedorWSTest extends TestCase{
     
     public FornecedorWSTest() {
     }
-    /*
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-     /**
-     * Test of getUsuario method, of class FornecedorWS.
-     */
-     
+         
     @Test
     public void testGetUsuario() throws Exception {
         FornecedorWSTest http = new FornecedorWSTest();
@@ -73,8 +44,7 @@ public class FornecedorWSTest extends TestCase{
         System.out.println(u.getNome());
         
         assertEquals("programatche", u.getNome());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+  
     }
     /**
      * Test of inserirUsuario method, of class FornecedorWS.
@@ -103,11 +73,8 @@ public class FornecedorWSTest extends TestCase{
         json = http.sendGet(url,"GET");
         u = g.fromJson(json, usuarioType);
        // System.out.println(u.getId() + "Oii");
-        assertNotNull( u.getId());
-     
-        
-        // TODO review the generated test code and remove the default call to fail.
-      
+        assertNotNull( u.getId());     
+             
     }
     
 
@@ -158,8 +125,7 @@ public class FornecedorWSTest extends TestCase{
         json = http.sendGet(url,"GET");
         u = g.fromJson(json, usuarioType);
        // System.out.println(u.getId() + "Oii");
-        assertEquals("Matheus", u.getNome());
-        
+        assertEquals("Matheus", u.getNome());        
         
         
     }
@@ -179,8 +145,7 @@ public class FornecedorWSTest extends TestCase{
         String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/list";
         String json = http.sendGet(url,"GET"); 
         assertNotNull(json);
-        
-        
+                
         
     }
    
