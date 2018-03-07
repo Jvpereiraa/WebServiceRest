@@ -83,14 +83,22 @@ public class FornecedorWS {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("Usuario/inserir")
-    public void inserirUsuario(Usuario content){
-        //Gson g = new Gson();
-        //Usuario u = (Usuario) g.fromJson(content, Usuario.class);
+    public boolean inserirUsuario(String content){
+        Gson g = new Gson();
+        Usuario u = (Usuario) g.fromJson(content, Usuario.class);
         UsuarioDAO dao = new UsuarioDAO();
-        dao.inserir(content);
-        
+        return dao.inserir(u);         
     
+    }
     
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("Usuario/alterar")
+    public boolean alterarUsuario(String content){
+        Gson g = new Gson();
+        Usuario u = (Usuario) g.fromJson(content, Usuario.class);
+        UsuarioDAO dao = new UsuarioDAO();
+        return dao.atualizar(u);
     }
     
     

@@ -35,37 +35,55 @@ public class HttpExemplo {
         Type usuarioType = new TypeToken<Usuario>() {
         }.getType();
         
-       // u.setId(3);
-       // u.setNome("programatche");
-       // u.setEmail("aaa.com");
-       // u.setComment("dsdasd");
-       // u.setCnpj("5465");
-        //String json = g.toJson(u, usuarioType);
-       // http.sendPost(url, json, "PUT   ");
-       
-       /*
+        /*
+       // Inseri o usuario
+        u.setId(4);
+        u.setNome("programatche");
+        u.setEmail("aaa.com");
+        u.setComment("dsdasd");
+        u.setCnpj("5465");
+        String json = g.toJson(u, usuarioType);
+        String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/inserir";
+        http.sendPost(url, json,"POST");
+        */
+        
+        
+        /*
+        Atualiza o usuario
+        
+        u.setId(2);
+        u.setNome("Joao");
+        u.setEmail("aaa.com");
+        u.setComment("dsdasd");
+        u.setCnpj("5465");
+        String json = g.toJson(u, usuarioType);
+        String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/alterar";
+        http.sendPost(url, json,"PUT");
+        */
+        
+        /*
         //Pegando um usuário
         String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/get/3";
         String json = http.sendGet(url,"GET");
         u = g.fromJson(json, usuarioType);
         System.out.println(u.getNome());
 
-      */
+        */
        
-       /*
-       Lista todos os usuarios
+        /*
+        Lista todos os usuarios
        
-       String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/list";
-       String json = http.sendGet(url,"GET");      
-       System.out.println(json);
-       */
+        String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/list";
+        String json = http.sendGet(url,"GET");      
+        System.out.println(json);
+        */
        
-       /*
+        /*
         Deleta usuario
         String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/delete/3";
         String retorno = http.sendGet(url,"DELETE");
         System.out.println(retorno);
-       */
+        */
       
        
     }

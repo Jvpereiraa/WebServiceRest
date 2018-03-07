@@ -59,18 +59,19 @@ public class UsuarioDAO {
     
     }
     
-    /*
+    
     public boolean atualizar(Usuario usuario)
     {
-        String sql = "UPDATE usuario set senha=?,perfil=?,email=? where login=?";
+        String sql = "UPDATE fornecedor set nome=?,email=?,comentario=?,cnpj=? where id=?";
         Boolean retorno = false;
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         try {
           
-            pst.setString(1, usuario.getSenha());
-            pst.setString(2, usuario.getPerfil());
-            pst.setString(3, usuario.getEmail());
-            pst.setString(4, usuario.getLogin());
+            pst.setString(1, usuario.getNome());
+            pst.setString(2, usuario.getEmail());
+            pst.setString(3, usuario.getComment());
+            pst.setString(4, usuario.getCnpj());
+            pst.setInt(5, usuario.getId());
             if(pst.executeUpdate()>0)
             {
                 retorno = true;
@@ -87,7 +88,7 @@ public class UsuarioDAO {
     
     }
 
-        */
+        
     public boolean excluir(Usuario usuario)
     {
         String sql = "DELETE FROM fornecedor where id=?";
