@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="cadastro">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Totalcross - Cadastro de Usuários</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity=" sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <style>
+
+        .usuario-conteudo {
+            background-color: #EEE;
+            padding: 20px 20px 10px 20px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="usuario-conteudo" ng-controller="UsuarioController">
+                <!-- <h1>Cadastro de Usuários</h1> -->
+                <!-- <form name="formulario" ng-submit="cadastrar()">
+                    <div class="form-group">
+                        <label for="nome">Nome*</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome do usuário"
+                               maxlength="20" required ng-model="usuario.nome">
+                    </div>
+                    <div class="form-group has-feedback {{statusSenha.classe}}">
+                        <label for="senha">Senha*</label>
+                        <input type="password" class="form-control" id="senha" placeholder="Informe a senha do usuário"
+                               maxlength="10" required ng-model="usuario.senha" ng-change="validarSenha()">
+                        <span class="glyphicon form-control-feedback {{statusSenha.icone}}" aria-hidden="true"></span>
+                        <p class="help-block">{{statusSenha.mensagem}}</p>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form> -->
+                <!-- <hr> -->
+                <h1>Lista de Usuários</h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nome</th>
+                        <th>Nome</th>
+                        <th>Nome</th>
+                        <th>Senha</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Aqui serão exibidos os dados do usuários cadastrados -->
+                    <tr ng-repeat="usuario in usuarios">
+                        <td>{{usuario.id}}</td>                       
+                        <td>{{usuario.nome}}</td>
+                        <td>{{usuario.email}}</td>
+                        <td>{{usuario.comment}}</td>
+                        <td>{{usuario.cnpj}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
