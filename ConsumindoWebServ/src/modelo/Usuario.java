@@ -8,7 +8,7 @@ package modelo;
 
 /**
  *
- * @author marcelosiedler
+ * @author zelphy
  */
 public class Usuario {
     
