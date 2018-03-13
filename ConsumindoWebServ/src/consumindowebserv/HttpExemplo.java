@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package consumindowebserv;
 
 import com.google.gson.Gson;
@@ -37,7 +33,7 @@ public class HttpExemplo {
         
         /*
        // Inseri o usuario
-        u.setId(4);
+        u.setId(9);
         u.setNome("programatche");
         u.setEmail("aaa.com");
         u.setComment("dsdasd");
@@ -48,18 +44,18 @@ public class HttpExemplo {
         */
         
         
-        /*
-        Atualiza o usuario
         
-        u.setId(2);
-        u.setNome("Joao");
+        //Atualiza o usuario
+        
+        u.setId(8);
+        u.setNome("matheus");
         u.setEmail("aaa.com");
         u.setComment("dsdasd");
         u.setCnpj("5465");
         String json = g.toJson(u, usuarioType);
         String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/alterar";
         http.sendPost(url, json,"PUT");
-        */
+        
         
         /*
         //Pegando um usuário
@@ -71,19 +67,19 @@ public class HttpExemplo {
         */
        
         /*
-        Lista todos os usuarios
+        //Lista todos os usuarios
        
         String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/list";
         String json = http.sendGet(url,"GET");      
         System.out.println(json);
         */
        
-        
+        /*
         //Deleta usuario
         String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/delete/6";
         String retorno = http.sendGet(url,"DELETE");
         System.out.println(retorno);
-        
+        */
       
        
     }
@@ -154,7 +150,6 @@ public class HttpExemplo {
 
         //print result
         System.out.println(response.toString());
-
     }
 
     

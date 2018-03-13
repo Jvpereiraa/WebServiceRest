@@ -8,8 +8,7 @@
             // lista de usuários pré cadastrados
             $http({
                 method: 'GET',
-                url: 'http://localhost:8080/Fornecedor/webresources/generic/Usuario/list',
-                headers: {}
+                url: 'http://localhost:8080/Fornecedor/webresources/generic/Usuario/list'               
                 }).then(function successCallback(response) {
                     $scope.usuarios = response.data;
                 }, function errorCallback(response) {
@@ -18,29 +17,90 @@
 
             //inicialização de um usuário vazio
             $scope.usuario =  {id:'', nome:'', email:'', comment:'', cnpj:''};
+            $scope.oldUsuario=  {id:'', nome:'', email:'', comment:'', cnpj:''};
 
-            //método para adicionar o usuário a lista
-            // $scope.cadastrar = function () {
-            //     $scope.usuarios.push($scope.usuario);
-            //     $scope.usuario = {id:'', nome:'', email:'', comment:'', cnpj:''};
-            //     $scope.statusSenha = {};
-            // };
+            $scope.findUserById = function(){
+                $http({
+                    method: 'GET',
+                    url: 'http://localhost:8080/Fornecedor/webresources/generic/Usuario/get/' + $scope.usuario.id              
+                    }).then(function successCallback(response) {
+                        if(response.data != null){
+                            $scope.usuarios = [response.data];
+                        }else{
+                            window.alert("Falha ao buscar");
+                        }
+                        
+                    }, function errorCallback(response) {
 
-            //método para validar a senha do usuário
-            // $scope.validarSenha = function () {
-            //     $scope.statusSenha = {};
+                });
+                $scope.usuario =  {id:'', nome:'', email:'', comment:'', cnpj:''};    
+            }
 
-                // if ($scope.usuario.senha && $scope.usuario.senha.length >= 6) {
-                //     $scope.statusSenha.classe = 'has-success';
-                //     $scope.statusSenha.icone = 'glyphicon-ok';
-                //     $scope.statusSenha.mensagem = 'Senha forte';
+            $scope.postUser = function(){               
+                $http.post('http://localhost:8080/Fornecedor/webresources/generic/Usuario/inserir', $scope.usuario)
+                    .then(function successCallback(response) {
+                        if(response.data != "false"){
+                            window.alert("Inserido com sucesso");
+                        }else{
+                            window.alert("Falha ao inserir");
+                        }
+                    }, function errorCallback(response) {
 
-                // }else {
-                //     $scope.statusSenha.classe = 'has-error';
-                //     $scope.statusSenha.icone = 'glyphicon-remove';
-                //     $scope.statusSenha.mensagem = 'Senha fraca';
-                // }
-            // };
+                });
+                $scope.usuario =  {id:'', nome:'', email:'', comment:'', cnpj:''};    
+            }
+
+
+            $scope.deleteUserById = function($id){
+                $http({
+                    method: 'DELETE',
+                    url: 'http://localhost:8080/Fornecedor/webresources/generic/Usuario/delete/' + $id              
+                    }).then(function successCallback(response) {
+                        console.log("boa");
+                        if(response.data != "false"){
+                            window.alert("Deletado com sucesso");
+                        }else{
+                            window.alert("Falha ao deletar");
+                        }
+                        window.location.reload();
+                    }, function errorCallback(response) {
+
+                });        
+                       
+                console.log($id);
+                $scope.usuario =  {id:'', nome:'', email:'', comment:'', cnpj:''};    
+            }
+
+            $scope.saveData = function($id){
+                 $http({
+                    method: 'GET',
+                    url: 'http://localhost:8080/Fornecedor/webresources/generic/Usuario/get/' + $id              
+                    }).then(function successCallback(response) {
+                        $scope.oldUsuario = response.data;
+                        // window.location.replace("atualizar.html");    
+                    }, function errorCallback(response) {
+
+                });
+            }
+
+            $scope.updateUserById = function($id){
+               // $location.path('file:///home/zelphy/Front/blog-files/criando-uma-aplicacao-angularjs/atualizar.html');
+                $http.put('http://localhost:8080/Fornecedor/webresources/generic/Usuario/alterar', $scope.usuario             
+                    ).then(function successCallback(response) {
+                        console.log("boa");
+                        console.log(response.data);
+                        if(response.data != "false"){
+                            window.alert("Atualizado com sucesso");
+                        }else{
+                            window.alert("Falha ao Deletar");
+                        }
+                    }, function errorCallback(response) {
+                         window.alert("Falha ao atualizar");
+                });        
+                       
+                console.log($id);
+                $scope.usuario =  {id:'', nome:'', email:'', comment:'', cnpj:''};    
+            }
         });
 
 })();

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lista dos Fornecedores</title>
+    <title>Atualizar Fornecedor</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,10 +39,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Lista
-                <span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Lista</a>
             </li>
 
             <li class="nav-item">
@@ -62,40 +60,48 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center" ng-controller="UsuarioController">
-          <h1>Lista de Fornecedor</h1>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Comment</th>
-                    <th>Cnpj</th>
-                    <th>Ações</th>
-                    <th>Ações2</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- Aqui serão exibidos os dados do usuários cadastrados -->
-                <tr ng-repeat="usuario in usuarios">
-                    <td>{{usuario.id}}</td>                       
-                    <td>{{usuario.nome}}</td>
-                    <td>{{usuario.email}}</td>
-                    <td>{{usuario.comment}}</td>
-                    <td>{{usuario.cnpj}}</td>
-                    <td>
-                        <button class="btn btn-danger" id="delete" ng-click=deleteUserById(usuario.id)>Deletar</button>
-                    </td>
-                    <td>
-                        <a class="btn btn-warning" id="data" href="atualizar.html">Atualizar</a>
-                    </td>
-                </tr>
+<div class="container" >
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="usuario-conteudo" ng-controller="UsuarioController">
+                <h1>Atualização do Fornecedor</h1>
+                <form name="formulario" ng-submit="updateUserById()">
+                    <div class="form-group">
+                        <label for="id">Id*</label>
+                        <input type="number" class="form-control" id="id" required ng-model="usuario.id" ng-trim="false">
+                    </div>    
+
+                    <div class="form-group">
+                        <label for="nome">Nome*</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome do fornecedor"
+                               maxlength="100" required ng-model="usuario.nome">
+                    </div>  
+
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email do fornecedor"
+                               maxlength="100" required ng-model="usuario.email">
+                    </div>  
+
+                    <div class="form-group">
+                        <label for="comentario">Comentario*</label>
+                        <input type="text" class="form-control" id="comentario" placeholder="Comentario"
+                               maxlength="100" style="height: 150px" required ng-model="usuario.comment">
+                    </div>  
+
+                    <div class="form-group">
+                        <label for="cnpj">Cnpj*</label>
+                        <input type="number" class="form-control" id="cnpj" placeholder="CNPJ do fornecedor"
+                               maxlength="11" required ng-model="usuario.cnpj">
+                    </div>  
+                    <button type="submit" class="btn btn-warning">Atualizar</button>
+                    <a class="btn btn-danger" href="index.html" >Voltar</a>
+                </form>
+                <hr>               
+            </div>
         </div>
-      </div>
     </div>
+</div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

@@ -27,6 +27,7 @@ public class FornecedorWSTest extends TestCase{
     
     private final String USER_AGENT = "Mozilla/5.0";
     
+    
     public FornecedorWSTest() {
     }
          
@@ -46,6 +47,8 @@ public class FornecedorWSTest extends TestCase{
         assertEquals("programatche", u.getNome());
   
     }
+    
+    
     /**
      * Test of inserirUsuario method, of class FornecedorWS.
      */
