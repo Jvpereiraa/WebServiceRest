@@ -19,13 +19,13 @@ import modelo.Usuario;
  *
  * @author marcelosiedler
  */
-public class HttpExemplo {
+public class Consumindo {
 
     private final String USER_AGENT = "Mozilla/5.0";
 
      public static void main(String[] args) throws Exception {
 
-        HttpExemplo http = new HttpExemplo();
+        Consumindo http = new Consumindo();
         Gson g = new Gson();
         Usuario u = new Usuario();
         Type usuarioType = new TypeToken<Usuario>() {
@@ -44,7 +44,7 @@ public class HttpExemplo {
         */
         
         
-        
+        /*
         //Atualiza o usuario
         
         u.setId(8);
@@ -55,16 +55,16 @@ public class HttpExemplo {
         String json = g.toJson(u, usuarioType);
         String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/alterar";
         http.sendPost(url, json,"PUT");
+        */
         
         
-        /*
         //Pegando um usuário
         String url = "http://localhost:8080/Fornecedor/webresources/generic/Usuario/get/3";
         String json = http.sendGet(url,"GET");
         u = g.fromJson(json, usuarioType);
         System.out.println(u.getNome());
 
-        */
+        
        
         /*
         //Lista todos os usuarios
