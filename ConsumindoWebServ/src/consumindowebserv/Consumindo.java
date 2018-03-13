@@ -17,7 +17,7 @@ import modelo.Usuario;
 
 /**
  *
- * @author marcelosiedler
+ * @author zelphy
  */
 public class Consumindo {
 
