@@ -64,18 +64,25 @@
     <!-- Page Content -->
     <div class="container" >
       <div class="row">
-          <div class="col-md-offset-2 col-md-8">
+          <div class="col-md-12">
               <div class="usuario-conteudo" ng-controller="UsuarioController">
-                  <h1>Consultar Fornecedor</h1>
-                  <form name="formulario" ng-submit="findUserById()">
-                      <div class="form-group">
-                          <label for="nome">Id*</label>
-                          <input type="text" class="form-control" id="nome" placeholder="Id do fornecedor"
-                                 maxlength="20" required ng-model="usuario.id">
-                      </div>                 
-                      <button type="submit" class="btn btn-primary">Consultar</button>
-                  </form>
-                  <hr>
+                
+                <div class="row">                                 
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                      <h1>Consultar Fornecedor</h1>
+                      <form name="formulario" ng-submit="findUserById()">
+                          <div class="form-group">
+                              <label for="nome">Id*</label>
+                              <input type="text" class="form-control" id="nome" placeholder="Id do fornecedor"
+                                     maxlength="20" required ng-model="usuario.id">
+                          </div>                 
+                          <button type="submit" class="btn btn-primary">Consultar</button>
+                      </form>
+                      <hr>
+                    </div>  
+                  </div>  
+
                   <h1>Lista de Fornecedor</h1>
                     <table class="table table-striped">
                         <thead>
@@ -106,6 +113,8 @@
                         </tr>
                         </tbody>
                     </table>
+
+
               </div>
           </div>
       </div>
